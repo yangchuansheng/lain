@@ -1,0 +1,11 @@
+[Unit]
+Description=Calico libnetwork plugin
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+Restart=on-failure
+ExecStart=/usr/bin/libnetwork-plugin
+
+[Install]
+WantedBy=multi-user.target

@@ -24,6 +24,7 @@ ExecStart=/usr/bin/docker daemon \
           --selinux-enabled \
           --graph {{ docker_graph_dir }} \
           --host unix:///var/run/docker.sock \
+          --host tcp://127.0.0.1:{{ docker_port }} \
           --host tcp://{{ node_ip }}:{{ docker_port }} \
           --log-driver=syslog \
           --log-opt syslog-address=tcp://127.0.0.1:514 \
