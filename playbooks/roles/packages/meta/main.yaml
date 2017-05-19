@@ -1,2 +1,5 @@
 dependencies:
   - role: config
+  - role: images
+    images:
+      - pip_binary
