@@ -1,3 +1,9 @@
+- name: install conntrack-tools
+  yum: pkg=conntrack-tools
+
+- name: install ipset
+  yum: pkg=ipset
+
 - name: copy calico-upgrade
   command: cp /tmp/lain/calico-upgrade /usr/bin/calico-upgrade
 
