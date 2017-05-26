@@ -7,3 +7,7 @@ fi
 pre_dir=playbooks/roles/binary/files/
 [ -d $pre_dir ] || mkdir $pre_dir
 tar -xzvf $filename -C playbooks/roles/binary/files/
+
+wget https://github.com/laincloud/networkd/releases/download/v0.1.20/networkd
+
+mv networkd playbooks/roles/networkd/files/
