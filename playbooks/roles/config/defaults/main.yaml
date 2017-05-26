@@ -138,3 +138,10 @@ ceph_mon_address: ip1,ip2,ip3
 
 client_mountpoint: /data/lain/cloud-volumes
 
+# LAIN versions
+networkd_version: v0.1.19
+
+# http/https proxy
+proxy_env:
+  http_proxy:
+  https_proxy:

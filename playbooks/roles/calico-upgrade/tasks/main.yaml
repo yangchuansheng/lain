@@ -92,7 +92,7 @@
   copy: src=service/calico-libnetwork.service dest=/lib/systemd/system/calico-libnetwork.service
 
 - name: update etcd data
-  command: calico-upgrade -etcd 127.0.0.1:{{ etcd_client_port }} -docker 127.0.0.1:{{ docker_port }}
+  command: calico-upgrade -etcd 127.0.0.1:{{ etcd_client_port }} -docker {{ node_ip }}:{{ docker_port }}
   run_once: true
 
 - name: run confd
@@ -102,31 +102,31 @@
   command: systemctl daemon-reload
 
 - name: enable and start calico-bird.service
-  systemd:
+  service:
     name: calico-bird.service
     state: started
     enabled: yes
 
 - name: enable and start calico-bird6.service
-  systemd:
+  service:
     name: calico-bird6.service
     state: started
     enabled: yes
 
 - name: enable and start calico-confd.service
-  systemd:
+  service:
     name: calico-confd.service
     state: started
     enabled: yes
 
 - name: enable and start calico-felix.service
-  systemd:
+  service:
     name: calico-felix.service
     state: started
     enabled: yes
 
 - name: enable and start calico-libnetwork.service
-  systemd:
+  service:
     name: calico-libnetwork.service
     state: started
     enabled: yes

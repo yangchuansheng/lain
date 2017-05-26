@@ -11,6 +11,7 @@
 
 - name: disable nscd
   service: name=nscd enabled=no state=stopped
+  ignore_errors: yes
 
 - name: load node info from etcd
   command: etcdctl get /lain/nodes/nodes/{{ node_name }}:{{ node_ip }}:{{ ssh_port }}
