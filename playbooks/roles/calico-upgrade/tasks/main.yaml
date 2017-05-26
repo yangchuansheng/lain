@@ -82,7 +82,7 @@
   copy: src=service/calico-bird.service dest=/lib/systemd/system/calico-bird.service
 
 - name: copy calico-bird6.service
-  copy: src=service/calico-bird.service dest=/lib/systemd/system/calico-bird6.service
+  copy: src=service/calico-bird6.service dest=/lib/systemd/system/calico-bird6.service
 
 - name: generate calico-confd.service
   template: src=calico-confd.service.j2 dest=/lib/systemd/system/calico-confd.service
