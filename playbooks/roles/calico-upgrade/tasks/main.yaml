@@ -4,6 +4,9 @@
 - name: install ipset
   yum: pkg=ipset
 
+- name: install net-tools
+  yum: pkg=net-tools
+
 - name: copy calico-upgrade
   command: cp /tmp/lain/calico-upgrade /usr/bin/calico-upgrade
 
