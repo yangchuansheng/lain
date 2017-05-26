@@ -26,11 +26,13 @@
 
 - name: remove calico-node container
   docker:
+    image: "{{ calico_node_image }}"
     name: calico-node
     state: absent
 
 - name: remove calico-libnetwork container
   docker:
+    image: "{{ calico_libnetwork_image }}"
     name: calico-libnetwork
     state: absent
 
