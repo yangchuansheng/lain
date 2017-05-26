@@ -25,12 +25,12 @@
     recurse: yes
 
 - name: remove calico-node container
-  docker_container:
+  docker:
     name: calico-node
     state: absent
 
 - name: remove calico-libnetwork container
-  docker_container:
+  docker:
     name: calico-libnetwork
     state: absent
 
