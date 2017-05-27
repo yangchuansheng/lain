@@ -7,8 +7,11 @@
 - name: install net-tools
   yum: pkg=net-tools
 
+- name: copy calicoctl
+  copy: src=bin/calicoctl dest=/usr/bin/calicoctl force=yes mode=0777
+
 - name: copy calico-upgrade
-  command: cp /tmp/lain/calico-upgrade /usr/bin/calico-upgrade
+  copy: src=bin/calico-upgrade dest=/usr/bin/calico-upgrade mode=0777
 
 - name: copy allocate-ipip-addr
   command: cp /tmp/lain/calicov1.2.0/allocate-ipip-addr /usr/bin/allocate-ipip-addr
