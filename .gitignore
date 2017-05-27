@@ -21,6 +21,5 @@ playbooks/roles/binary/files/*
 **/dist
 **/*.egg-info
 venv/
-lain.iml
 playbooks/roles/networkd/files/networkd
 playbooks/roles/calico-upgrade/files/bin/
