@@ -1,3 +1,7 @@
+- name: stop networkd service
+  service: name=networkd state=stopped
+  ignore_errors: yes
+
 - name: copy networkd binary file
   copy:
     src: networkd
