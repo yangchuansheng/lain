@@ -109,7 +109,7 @@
   command: calico-upgrade -etcd 127.0.0.1:{{ etcd_client_port }} -docker {{ node_ip }}:{{ docker_port }}
   run_once: true
 
-- name: add default calico rules to etcd
+- name: update default calico rules
   command: etcdctl set /lain/config/calico_default_rule '{"inbound_rules":[],"outbound_rules":[{"action":"deny","dst_net":"{{ node_network }}","protocol":"tcp","dst_ports":[9003]},{"action":"deny","dst_net":"{{ node_network }}","protocol":"tcp","dst_ports":[9002]},{"action":"deny","dst_net":"{{ node_network }}","protocol":"tcp","dst_ports":[7001]},{"action":"deny","dst_net":"{{ node_network }}","protocol":"tcp","dst_ports":[4001]},{"action":"deny","dst_net":"{{ node_network }}","protocol":"tcp","dst_ports":[2376]},{"action":"deny","dst_net":"{{ node_network }}","protocol":"tcp","dst_ports":[2375]},{"action":"allow"}]}'
   run_once: true
 
