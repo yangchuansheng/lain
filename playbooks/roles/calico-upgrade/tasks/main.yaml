@@ -88,7 +88,7 @@
   template: src=felix.cfg.j2 dest=/etc/calico/felix.cfg
 
 - name: generate calico.cfg
-  template: src=calico.cfg.j2 dest=/etc/calico/calico.cfg
+  template: src=calico.env.j2 dest=/etc/calico/calico.env
 
 - name: copy calico-bird.service
   copy: src=service/calico-bird.service dest=/lib/systemd/system/calico-bird.service
